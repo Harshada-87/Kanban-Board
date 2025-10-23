@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simple kanban board</h1>
+
+      <div class="add-task">
+        <input type="text" id="new-task" placeholder="Enter new task" />
+        <button id="add-btn">Add Task</button>
+      </div>
+
+      <div class="board">
+        <!-- List 1 -->
+        <div class="list" id="l1">
+          <h1>Todo list</h1>
+          <!-- 
+          <div class="card" draggable="true" id="c1"></div>
+          <div class="card" draggable="true" id="c2"></div> -->
+        </div>
+
+        <!-- List 2 -->
+        <div class="list" id="l2">
+          <h1>In Progress</h1>
+          <!-- <div class="card" draggable="true" id="c3">Learn to code</div> -->
+        </div>
+
+        <!-- List 3 -->
+        <div class="list" id="l3">
+          <h1>Done</h1>
+          <!-- <div class="card" draggable="true" id="c4">Go to Gym</div> -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
