@@ -21,7 +21,7 @@ body{
 
 .list {
     /* background: linear-gradient(rgba(225, 226, 216, 0.988), rgb(102, 255, 20)); */
-    background-color: #a8b4ff45;
+    background-color:#0775ff2b;
     padding: 45px;
     margin: 20px;
     min-height: 300px;
@@ -65,7 +65,7 @@ h1, h2 {
 
 
 .card:hover{
-    background-color: rgb(165, 186, 255);
+    background-color: #2196f394;
 }
 
 .list.over {
