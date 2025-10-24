@@ -21,7 +21,7 @@ body{
 
 .list {
     /* background: linear-gradient(rgba(225, 226, 216, 0.988), rgb(102, 255, 20)); */
-    background-color: rgb(164, 237, 255);
+    background-color: #a8b4ff45;
     padding: 45px;
     margin: 20px;
     min-height: 300px;
@@ -69,7 +69,7 @@ h1, h2 {
 }
 
 .list.over {
-    background-color: rgb(108, 250, 255) !important;
+    background-color: rgb(108, 250, 255) ;
    
 }
 

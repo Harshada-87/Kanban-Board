@@ -144,7 +144,7 @@ addBtn.addEventListener("click", () => {
   saveBoard();
 });
 
-// ✅ Save board to localStorage
+// Save board to localStorage
 function saveBoard() {
   const data = {};
   lists.forEach((list) => {
@@ -157,7 +157,7 @@ function saveBoard() {
   localStorage.setItem("kanbanData", JSON.stringify(data));
 }
 
-// ✅ Load board from localStorage
+// Load board from localStorage
 function loadBoard() {
   const saved = localStorage.getItem("kanbanData");
   if (!saved) return;
