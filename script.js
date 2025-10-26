@@ -110,11 +110,43 @@ function showDeletePopup(card) {
   popup.querySelector("#no-btn").onclick = () => popup.remove();
 }
 
+// function editCard(card, textEl) {
+//   const input = document.createElement("input");
+//   input.type = "text";
+//   input.value = textEl.textContent;
+//   input.classList.add("edit-input");
+
+//   card.replaceChild(input, textEl);
+//   input.focus();
+
+//   input.addEventListener("blur", () => {
+//     textEl.textContent = input.value.trim() || textEl.textContent;
+//     card.replaceChild(textEl, input);
+//     saveBoard();
+//   });
+
+//   input.addEventListener("keydown", (e) => {
+//     if (e.key === "Enter") {
+//       input.blur();
+//     }
+//   });
+// }
+
+
 function editCard(card, textEl) {
   const input = document.createElement("input");
   input.type = "text";
   input.value = textEl.textContent;
   input.classList.add("edit-input");
+
+  const editBtn = card.querySelector(".edit-btn");
+  const deleteBtn = card.querySelector(".delete-btn");
+
+  // Hide icons on small screens while editing
+  if (window.innerWidth <= 600) {
+    editBtn.style.display = "none";
+    deleteBtn.style.display = "none";
+  }
 
   card.replaceChild(input, textEl);
   input.focus();
@@ -123,6 +155,12 @@ function editCard(card, textEl) {
     textEl.textContent = input.value.trim() || textEl.textContent;
     card.replaceChild(textEl, input);
     saveBoard();
+
+    // Show icons again after editing (on small screens)
+    if (window.innerWidth <= 600) {
+      editBtn.style.display = "inline";
+      deleteBtn.style.display = "inline";
+    }
   });
 
   input.addEventListener("keydown", (e) => {
@@ -131,6 +169,7 @@ function editCard(card, textEl) {
     }
   });
 }
+
 
 addBtn.addEventListener("click", () => {
   const taskText = newTaskInput.value.trim();

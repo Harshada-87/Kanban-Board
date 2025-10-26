@@ -178,7 +178,9 @@ h1, h2 {
   color: white;
 }
 
-
+.card button {
+  transition: opacity 0.3s ease;
+}
 
 
 @media (max-width:768px) {
