@@ -151,15 +151,44 @@ function editCard(card, textEl) {
 // ADD TASK 
 addBtn.addEventListener("click", () => {
   const taskText = newTaskInput.value.trim();
-  if (taskText === "") return alert("Please enter a task");
+  // if (taskText === "") return alert("Please enter a task");
 
+if (taskText === "") {
+  showMessage("⚠️ Please enter a task!");
+  return;
+}
+
+
+//   "c" + Date.now() generates a unique ID like "c1730055677000"
+//    taskText → passes the cleaned task text.
+//    This creates the draggable card element
   const newCard = createCard("c" + Date.now(), taskText);
-  todoList.appendChild(newCard);
   console.log(newCard);
   
-  newTaskInput.value = "";
+  todoList.appendChild(newCard);  // l1
+  newTaskInput.value = "";        // reset the newtask i/p value to empty string
   saveBoard();
 });
+
+
+
+
+function showMessage(msg) {
+  let messageEl = document.getElementById("message");
+  if (!messageEl) {
+    messageEl = document.createElement("div");
+    messageEl.id = "message";
+    messageEl.style.color = "red";
+    messageEl.style.textAlign = "center";
+    messageEl.style.marginLeft = "20px";
+    document.querySelector(".add-task").appendChild(messageEl);
+  }
+
+  messageEl.textContent = msg;
+
+  setTimeout(() => (messageEl.textContent = ""), 2000); // clear after 2 sec
+}
+
 
 
 // Save board to localStorage
