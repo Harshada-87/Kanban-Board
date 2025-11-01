@@ -111,6 +111,9 @@ function showDeletePopup(card) {
 }
 
 
+
+
+
 function editCard(card, textEl) {
   const input = document.createElement("input");
   input.type = "text";
@@ -147,6 +150,8 @@ function editCard(card, textEl) {
     }
   });
 }
+
+
 
 // ADD TASK 
 addBtn.addEventListener("click", () => {
@@ -203,6 +208,10 @@ function saveBoard() {
   });
   localStorage.setItem("kanbanData", JSON.stringify(data));
 }
+
+
+
+
 
 // Load board from localStorage
 function loadBoard() {
