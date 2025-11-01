@@ -168,7 +168,7 @@ if (taskText === "") {
 //    taskText → passes the cleaned task text.
 //    This creates the draggable card element
   const newCard = createCard("c" + Date.now(), taskText);
-  console.log(newCard);
+  // console.log(newCard);
   
   todoList.appendChild(newCard);  // l1
   newTaskInput.value = "";        // reset the newtask i/p value to empty string
