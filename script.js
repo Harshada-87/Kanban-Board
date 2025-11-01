@@ -40,11 +40,9 @@ function dragDrop(e) {
   saveBoard();
 }
 
-
 const addBtn = document.getElementById("add-btn");
 const newTaskInput = document.getElementById("new-task");
 const todoList = document.getElementById("l1");
-
 
 function createCard(id, text) {
   const card = document.createElement("div");
@@ -76,14 +74,12 @@ function createCard(id, text) {
   return card;
 }
 
-
 // Allow adding task by pressing Enter key
 newTaskInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     addBtn.click(); // trigger the existing Add Task button click
   }
 });
-
 
 // Custom delete confirmation popup
 function showDeletePopup(card) {
@@ -110,10 +106,6 @@ function showDeletePopup(card) {
   popup.querySelector("#no-btn").onclick = () => popup.remove();
 }
 
-
-
-
-
 function editCard(card, textEl) {
   const input = document.createElement("input");
   input.type = "text";
@@ -124,6 +116,7 @@ function editCard(card, textEl) {
   const deleteBtn = card.querySelector(".delete-btn");
 
   // Hide icons on small screens while editing
+
   if (window.innerWidth <= 600) {
     editBtn.style.display = "none";
     deleteBtn.style.display = "none";
@@ -151,32 +144,26 @@ function editCard(card, textEl) {
   });
 }
 
-
-
-// ADD TASK 
+// ADD TASK
 addBtn.addEventListener("click", () => {
   const taskText = newTaskInput.value.trim();
   // if (taskText === "") return alert("Please enter a task");
 
-if (taskText === "") {
-  showMessage("⚠️ Please enter a task!");
-  return;
-}
+  if (taskText === "") {
+    showMessage("⚠️ Please enter a task!");
+    return;
+  }
 
-
-//   "c" + Date.now() generates a unique ID like "c1730055677000"
-//    taskText → passes the cleaned task text.
-//    This creates the draggable card element
+  //   "c" + Date.now() generates a unique ID like "c1730055677000"
+  //    taskText → passes the cleaned task text.
+  //    This creates the draggable card element
   const newCard = createCard("c" + Date.now(), taskText);
   // console.log(newCard);
-  
-  todoList.appendChild(newCard);  // l1
-  newTaskInput.value = "";        // reset the newtask i/p value to empty string
+
+  todoList.appendChild(newCard); // l1
+  newTaskInput.value = ""; // reset the newtask i/p value to empty string
   saveBoard();
 });
-
-
-
 
 function showMessage(msg) {
   let messageEl = document.getElementById("message");
@@ -194,8 +181,6 @@ function showMessage(msg) {
   setTimeout(() => (messageEl.textContent = ""), 2000); // clear after 2 sec
 }
 
-
-
 // Save board to localStorage
 function saveBoard() {
   const data = {};
@@ -208,10 +193,6 @@ function saveBoard() {
   });
   localStorage.setItem("kanbanData", JSON.stringify(data));
 }
-
-
-
-
 
 // Load board from localStorage
 function loadBoard() {
